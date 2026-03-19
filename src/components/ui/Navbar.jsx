@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import logo from "../../assets/logo.png";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,8 +23,12 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         
         {/* Logo */}
-        <div className="text-2xl font-bold text-cyan-400 cursor-pointer">
-          LL Telecom
+        <div className="flex items-center">
+            <img
+                src={logo}
+                alt="LL Telecom"
+                className="h-10 w-auto object-contain"
+            />
         </div>
 
         {/* Desktop menu */}
