@@ -2,27 +2,29 @@ import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 20);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "bg-black/60 backdrop-blur-md border-b border-white/10"
-          : "bg-transparent"
+    <nav
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-black/70 backdrop-blur-md border-b border-white/10"
+          : "bg-black/30 backdrop-blur-md"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        
-        {/* Logo */}
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        {/* LOGO */}
         <div className="flex items-center">
             <img
                 src={logo}
@@ -31,32 +33,41 @@ export default function Navbar() {
             />
         </div>
 
-        {/* Desktop menu */}
-        <div className="hidden md:flex items-center gap-8 text-sm text-gray-200">
-          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-white">
-            Accueil
-          </button>
-          <button onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-white">
-            Services
-          </button>
-          <button className="hover:text-white">
-            Projets
-          </button>
-          <button className="hover:text-white">
-            Contact
-          </button>
+        {/* MENU DESKTOP */}
+        <div className="hidden md:flex gap-8 text-sm text-gray-300">
+          <a href="#">Accueil</a>
+          <a href="#">Services</a>
+          <a href="#">Projets</a>
+          <a href="#">Contact</a>
         </div>
 
-        {/* CTA button */}
-        <button className="hidden md:block px-5 py-2 bg-cyan-500 hover:bg-cyan-400 text-sm font-medium rounded-xl shadow-lg shadow-cyan-500/30">
-          Demander un devis
+        {/* CTA */}
+        <button className="hidden md:block px-5 py-2 bg-cyan-500 rounded-xl">
+          Devis
         </button>
 
-        {/* Mobile icon */}
-        <div className="md:hidden text-white text-2xl cursor-pointer">
+        {/* BURGER */}
+        <div
+          className="md:hidden text-2xl cursor-pointer"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           ☰
         </div>
-      </nav>
-    </header>
+      </div>
+
+      {/* MOBILE MENU */}
+      {menuOpen && (
+        <div className="md:hidden bg-black/90 backdrop-blur-md px-6 py-6 flex flex-col gap-4 text-gray-300">
+          <a href="#" onClick={() => setMenuOpen(false)}>Accueil</a>
+          <a href="#" onClick={() => setMenuOpen(false)}>Services</a>
+          <a href="#" onClick={() => setMenuOpen(false)}>Projets</a>
+          <a href="#" onClick={() => setMenuOpen(false)}>Contact</a>
+
+          <button className="mt-4 px-5 py-2 bg-cyan-500 rounded-xl">
+            Devis
+          </button>
+        </div>
+      )}
+    </nav>
   );
 }

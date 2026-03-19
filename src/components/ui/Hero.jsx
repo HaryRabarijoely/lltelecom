@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center bg-[#0A0A0A] text-white overflow-hidden">
+    <section className="relative pt-24 md:pt-32 h-screen ...">
       
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0A0A0A] to-[#111111]" />
@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="absolute w-[400px] h-[400px] bg-purple-600/20 blur-[120px] rounded-full bottom-[-100px] right-[-100px]" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col md:grid md:grid-cols-2 gap-10 items-center">
 
         {/* LEFT TEXT */}
         <div>
