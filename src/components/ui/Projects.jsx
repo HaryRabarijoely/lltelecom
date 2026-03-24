@@ -4,11 +4,12 @@ import fibre from "../../assets/projects/fibre.jpg";
 import datacenter from "../../assets/projects/coridor.jpg";
 import reseau from "../../assets/projects/baie.jpg";
 import electricite from "../../assets/projects/cdc.jpg";
+import Tilt from "react-parallax-tilt";
 
-// 🔹 catégories
+// 🔹 Catégories
 const categories = ["Tous", "Fibre", "Datacenter", "Réseau"];
 
-// 🔹 projets
+// 🔹 Tes projets (remplace les images par les tiennes)
 const projectsData = [
   {
     title: "Déploiement fibre",
@@ -44,9 +45,13 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
 
         {/* TITLE */}
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-3xl md:text-5xl font-bold text-center mb-10"
+        >
           Nos réalisations
-        </h2>
+        </motion.h2>
 
         {/* FILTER */}
         <div className="flex justify-center gap-4 mb-12 flex-wrap">
@@ -54,7 +59,7 @@ export default function Projects() {
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-4 py-2 rounded-xl text-sm ${
+              className={`px-4 py-2 rounded-xl text-sm transition ${
                 active === cat
                   ? "bg-cyan-500 text-white"
                   : "bg-white/10 hover:bg-white/20"
@@ -66,25 +71,49 @@ export default function Projects() {
         </div>
 
         {/* GRID */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map((project, index) => (
-            <motion.div
+
+            <Tilt
               key={index}
-              layout
-              whileHover={{ scale: 1.03 }}
-              className="cursor-pointer rounded-2xl overflow-hidden"
-              onClick={() => setSelected(project)}
+              tiltMaxAngleX={10}
+              tiltMaxAngleY={10}
+              perspective={1000}
+              scale={1.05}
+              transitionSpeed={800}
+              className="rounded-2xl"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-60 object-cover"
-              />
-              <div className="p-4 bg-[#111]">
-                <h3 className="font-semibold">{project.title}</h3>
-                <p className="text-sm text-gray-400">{project.desc}</p>
-              </div>
-            </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="group relative rounded-2xl overflow-hidden cursor-pointer"
+                onClick={() => setSelected(project)}
+              >
+
+                {/* IMAGE */}
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-64 object-cover transition duration-700 group-hover:scale-110"
+                  />
+
+                  {/* GLOW */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition duration-500" />
+                </div>
+
+                {/* CONTENT */}
+                <div className="p-5 bg-[#111] group-hover:bg-[#151515] transition">
+                  <h3 className="text-lg font-semibold text-white">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-gray-400 mt-1">
+                    {project.desc}
+                  </p>
+                </div>
+
+              </motion.div>
+            </Tilt>
+
           ))}
         </div>
 
@@ -110,6 +139,7 @@ export default function Projects() {
                   alt={selected.title}
                   className="w-full h-64 object-cover"
                 />
+
                 <div className="p-6">
                   <h3 className="text-xl font-bold">
                     {selected.title}
