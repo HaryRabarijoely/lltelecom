@@ -3,8 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import fibre from "../../assets/projects/fibre.jpg";
 import datacenter from "../../assets/projects/coridor.jpg";
 import reseau from "../../assets/projects/baie.jpg";
-import electricite from "../../assets/projects/cdc.jpg";
 import Tilt from "react-parallax-tilt";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+
 
 // 🔹 Catégories
 const categories = ["Tous", "Fibre", "Datacenter", "Réseau"];
@@ -32,6 +38,30 @@ const projectsData = [
 ];
 
 export default function Projects() {
+  
+  useEffect(() => {
+    const cards = sectionRef.current.querySelectorAll(".card");
+
+    gsap.fromTo(
+        cards,
+        {
+        opacity: 0,
+        y: 100,
+        },
+        {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+        },
+        }
+    );
+    }, []);
+  const sectionRef = useRef(null);  
   const [active, setActive] = useState("Tous");
   const [selected, setSelected] = useState(null);
 
@@ -41,7 +71,7 @@ export default function Projects() {
       : projectsData.filter((p) => p.category === active);
 
   return (
-    <section className="bg-[#0A0A0A] text-white py-24 px-6">
+    <section ref={sectionRef} className="bg-[#0A0A0A] text-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* TITLE */}
@@ -85,7 +115,7 @@ export default function Projects() {
             >
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer"
+                className="card group relative rounded-2xl overflow-hidden cursor-pointer"
                 onClick={() => setSelected(project)}
               >
 
