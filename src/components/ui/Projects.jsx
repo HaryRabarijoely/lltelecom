@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -61,6 +62,28 @@ export default function Projects() {
         }
     );
     }, []);
+
+  useEffect(() => {
+    const images = sectionRef.current.querySelectorAll(".parallax-img");
+
+    images.forEach((img) => {
+        gsap.to(img, {
+        y: -80, // effet parallax
+        ease: "none",
+        scrollTrigger: {
+            trigger: img,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+        },
+        });
+    });
+
+    return () => {
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
+    }, []);
+    
   const sectionRef = useRef(null);  
   const [active, setActive] = useState("Tous");
   const [selected, setSelected] = useState(null);
@@ -124,7 +147,7 @@ export default function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover transition duration-700 group-hover:scale-110"
+                    className="parallax-img w-full h-64 object-cover transition duration-700 group-hover:scale-110"
                   />
 
                   {/* GLOW */}
