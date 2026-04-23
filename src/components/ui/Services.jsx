@@ -22,7 +22,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-[#0A0A0A] text-white py-24 px-6">
+    <section className="bg-[#0A0A0A] text-white py-24 px-6" id="services">
       <div className="max-w-6xl mx-auto">
 
         {/* Titre */}

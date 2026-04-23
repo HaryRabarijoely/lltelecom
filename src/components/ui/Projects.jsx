@@ -94,7 +94,7 @@ export default function Projects() {
       : projectsData.filter((p) => p.category === active);
 
   return (
-    <section ref={sectionRef} className="bg-[#0A0A0A] text-white py-24 px-6">
+    <section ref={sectionRef} className="bg-[#0A0A0A] text-white py-24 px-6" id="projects">
       <div className="max-w-6xl mx-auto">
 
         {/* TITLE */}

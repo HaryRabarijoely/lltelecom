@@ -4,6 +4,12 @@ import logo from "../../assets/logo.png";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,10 +41,11 @@ export default function Navbar() {
 
         {/* MENU DESKTOP */}
         <div className="hidden md:flex gap-8 text-sm text-gray-300">
-          <a href="#">Accueil</a>
-          <a href="#">Services</a>
-          <a href="#">Projets</a>
-          <a href="#">Contact</a>
+          <button onClick={() => scrollTo("accueil")}>Accueil</button>
+          <button onClick={() => scrollTo("services")}>Services</button>
+          <button onClick={() => scrollTo("projets")}>Projets</button>
+          <button onClick={() => scrollTo("process")}>Process</button>
+          <button onClick={() => scrollTo("contact")}>Contact</button>
         </div>
 
         {/* CTA */}

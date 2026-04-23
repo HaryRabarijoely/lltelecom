@@ -22,7 +22,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="bg-[#0A0A0A] text-white py-24 px-6">
+    <section className="bg-[#0A0A0A] text-white py-24 px-6" id="process">
       <div className="max-w-6xl mx-auto">
 
         {/* Title */}

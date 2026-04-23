@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative pt-24 md:pt-32 h-screen ...">
+    <section className="relative pt-24 md:pt-32 h-screen ..." id="accueil">
       
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0A0A0A] to-[#111111]" />
