@@ -43,8 +43,8 @@ export default function Navbar() {
         <div className="hidden md:flex gap-8 text-sm text-gray-300">
           <button onClick={() => scrollTo("accueil")}>Accueil</button>
           <button onClick={() => scrollTo("services")}>Services</button>
-          <button onClick={() => scrollTo("projets")}>Projets</button>
           <button onClick={() => scrollTo("process")}>Process</button>
+          <button onClick={() => scrollTo("projects")}>Projets</button>
           <button onClick={() => scrollTo("contact")}>Contact</button>
         </div>
 

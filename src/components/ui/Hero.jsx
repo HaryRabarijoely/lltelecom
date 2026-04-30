@@ -17,32 +17,28 @@ export default function Hero() {
 
         {/* LEFT TEXT */}
         <div>
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold leading-tight"
-          >
-            Infrastructure télécom <br />
-            <span className="text-cyan-400">nouvelle génération</span>
-          </motion.h1>
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+            Votre partenaire en <span className="text-cyan-400">solution Datacenter</span>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="mt-6 text-gray-400 text-lg"
-          >
-            Fibre optique, datacenter et réseaux conçus pour la performance
-            et la fiabilité.
-          </motion.p>
+          <p className="text-lg text-gray-400 max-w-xl mt-6">
+            Fibre optique, distribution électrique et infrastructures IT conçues pour la performance, la fiabilité et la sécurité de vos systèmes.
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="mt-8 flex gap-4"
-          >
+          
+          
+          
+        <p>
+              Dans un environnement numérique en constante évolution, la performance des infrastructures est essentielle.
+        </p>
+
+          <p>
+              Nous concevons, installons et intégrons des solutions complètes pour les datacenters et réseaux d’entreprise.
+          </p>
+
+          <p>
+              Avec plus de 15 ans d’expérience, nous accompagnons nos clients avec une approche fiable, durable et sur mesure.
+          </p>
             <button className="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 transition rounded-xl font-semibold shadow-lg shadow-cyan-500/30">
               Demander un devis
             </button>
@@ -50,7 +46,7 @@ export default function Hero() {
             <button className="px-6 py-3 border border-gray-700 hover:border-cyan-400 transition rounded-xl">
               Voir services
             </button>
-          </motion.div>
+          
         </div>
 
         {/* RIGHT VISUAL */}
