@@ -49,7 +49,7 @@ export default function Contact() {
           <input
             type="email"
             placeholder="Email"
-            className="w-full p-3 rounded-lg bg-black/50 border border-white/10 focus:outline-none focus:border-cyan-500"
+            className="w-full p-3 rounded-lg bg-black/50 border border-white/10 focus:outline-none focus:border-cyan-500" required
           />
 
           <textarea
