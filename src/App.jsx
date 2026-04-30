@@ -6,6 +6,7 @@ import Process from "./components/ui/Process";
 import Projects from "./components/ui/Projects";
 import gsap from "gsap";
 import Story from "./components/ui/Story";
+import Contact from "./components/ui/Contact";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Process />
       <Projects />
       <Story />
+      <Contact />
     </div>
   );
 }
