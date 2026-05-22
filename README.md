@@ -1,16 +1,14 @@
-# React + Vite
+Dans un monde de communications à haut débit, il est encore plus important de bénéficier du soutient d'une entreprise spécialisée et dédiée,  qui puisse offrir une véritable connaissance et une expertise en matière d'installation de solution client au sein de datacenter. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+LLT est un concepteur, installateur et intégrateur de solution complète pour des salles IT. 
 
-Currently, two official plugins are available:
+LLT est votre partenaire de confiance pour tous vos besoins en infrastructure de Datacenter. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Profitez de notre expertise de plus de 15 ans dans le domaine pour garantir la qualité et la satisfaction de vos projets.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+LLT est experte dans le domaine de la fibre optique ainsi que dans la distribution d’électricité, ses compétences lui permettent de satisfaire ses clients en garantissant la qualité de réalisation.
 
-## Expanding the ESLint configuration
+Nous réalisons vos travaux d'infrastructure de chemin de cable ou goulotte optique, ainsi que les mises en places de cold-corridor.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+En s’entourant de techniciens polyvalents, la stratégie de LLT reste la même et inchangée depuis sa création, la satisfaction client.
